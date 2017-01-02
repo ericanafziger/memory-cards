@@ -49,20 +49,6 @@ $(document).ready(function(){
             $('[class^="card-back"]').not('.match').show();
 
           }, 800);
-          // $('.' + frontClasses[0]).hide();
-          // $('.' + frontClasses[1]).hide();
-          // $('.' + backClasses[0]).show();
-          // $('.' + backClasses[1]).show();
-          // console.log(frontClasses);
-          // function configureTimeout(frontClasses, backClasses) {
-          //   setTimeout(function() {
-          //     alert("this does a thing");
-          //     console.log(frontClasses);
-          //     $('.' + frontClasses[0]).hide();
-          //     $('.' + frontClasses[1]).hide();
-          //     $('.' + backClasses[0]).show();
-          //     $('.' + backClasses[1]).show(); }, 1000);
-          // }
           clicked = [];
           frontClasses = [];
           backClasses = [];
