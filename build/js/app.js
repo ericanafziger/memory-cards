@@ -35,11 +35,10 @@ $(document).ready(function(){
   });
 
   $('[class^="card-back"]').click(function(){
-    var elementClass = $(this).attr('class');
-    console.log(elementClass);
-
-    //this card front show //
-    // get element by id //
+    var backClass = $(this).attr('class');
+    var frontClass = backClass.replace('back', 'front');
+    $('.' + frontClass).show();
+    $('.' + backClass).hide();
   });
 });
 
