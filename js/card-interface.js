@@ -16,11 +16,4 @@ $(document).ready(function(){
     $('.cards').append("<div class='card-back" + card.number + "'>" + card.back + "</div>");
     $('.cards').append("<div class='card-front" + card.number + "'>" + card.front + "</div>" );
   });
-
-  $('[class^="card-back"]').click(function(){
-    var backClass = $(this).attr('class');
-    var frontClass = backClass.replace('back', 'front');
-    $('.' + frontClass).show();
-    $('.' + backClass).hide();
-  });
 });
