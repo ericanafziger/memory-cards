@@ -18,6 +18,9 @@ $(document).ready(function(){
   });
 });
 
+
+
+
 $(document).ready(function(){
   var clicked = [];
   var frontClasses = [];
@@ -33,14 +36,33 @@ $(document).ready(function(){
       clicked.push($('.' + frontClass).html());
       if (clicked.length === 2) {
         if (clicked[0] === clicked[1]) {
+          $('.' + frontClasses[0]).addClass('match');
+          $('.' + frontClasses[1]).addClass('match');
+          $('.' + backClasses[0]).addClass('match');
+          $('.' + backClasses[1]).addClass('match');
           frontClasses = [];
           backClasses = [];
           clicked = [];
         } else {
-          $('.' + frontClasses[0]).hide();
-          $('.' + frontClasses[1]).hide();
-          $('.' + backClasses[0]).show();
-          $('.' + backClasses[1]).show();
+          setTimeout(function() {
+            $('[class^="card-front"]').not('.match').hide();
+            $('[class^="card-back"]').not('.match').show();
+
+          }, 800);
+          // $('.' + frontClasses[0]).hide();
+          // $('.' + frontClasses[1]).hide();
+          // $('.' + backClasses[0]).show();
+          // $('.' + backClasses[1]).show();
+          // console.log(frontClasses);
+          // function configureTimeout(frontClasses, backClasses) {
+          //   setTimeout(function() {
+          //     alert("this does a thing");
+          //     console.log(frontClasses);
+          //     $('.' + frontClasses[0]).hide();
+          //     $('.' + frontClasses[1]).hide();
+          //     $('.' + backClasses[0]).show();
+          //     $('.' + backClasses[1]).show(); }, 1000);
+          // }
           clicked = [];
           frontClasses = [];
           backClasses = [];

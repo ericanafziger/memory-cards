@@ -1,3 +1,6 @@
+
+
+
 $(document).ready(function(){
   var clicked = [];
   var frontClasses = [];
@@ -13,14 +16,19 @@ $(document).ready(function(){
       clicked.push($('.' + frontClass).html());
       if (clicked.length === 2) {
         if (clicked[0] === clicked[1]) {
+          $('.' + frontClasses[0]).addClass('match');
+          $('.' + frontClasses[1]).addClass('match');
+          $('.' + backClasses[0]).addClass('match');
+          $('.' + backClasses[1]).addClass('match');
           frontClasses = [];
           backClasses = [];
           clicked = [];
         } else {
-          $('.' + frontClasses[0]).hide();
-          $('.' + frontClasses[1]).hide();
-          $('.' + backClasses[0]).show();
-          $('.' + backClasses[1]).show();
+          setTimeout(function() {
+            $('[class^="card-front"]').not('.match').hide();
+            $('[class^="card-back"]').not('.match').show();
+
+          }, 800);
           clicked = [];
           frontClasses = [];
           backClasses = [];
