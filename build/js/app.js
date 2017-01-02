@@ -48,14 +48,12 @@ $(document).ready(function(){
       $('.' + frontClass).show();
       $('.' + backClass).hide();
       clicked.push($('.' + frontClass).html());
-      console.log(clicked);
-      alert('works');
       if (clicked.length === 2) {
         if (clicked[0] === clicked[1]) {
+          frontClasses = [];
+          backClasses = [];
           clicked = [];
-          alert('match');
         } else {
-          alert('not a match');
           $('.' + frontClasses[0]).hide();
           $('.' + frontClasses[1]).hide();
           $('.' + backClasses[0]).show();
@@ -63,7 +61,6 @@ $(document).ready(function(){
           clicked = [];
           frontClasses = [];
           backClasses = [];
-
         }
       }
     }
