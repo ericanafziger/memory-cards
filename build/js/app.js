@@ -5,8 +5,10 @@ function Card(back) {
 }
 
 Card.prototype.randomize = function(images) {
-  var random = images[Math.floor(Math.random() * images.length)];
+  var index = Math.random() * images.length;
+  var random = images[Math.floor(index)];
   this.front = random;
+  images.splice(index, 1);
 };
 
 exports.cardModule = Card;
@@ -25,6 +27,7 @@ $(document).ready(function(){
     cards.push(card);
   }
   cards.forEach(function(card) {
+
     $('.container').append("<div class='card'>" + card.front + "</div>");
   });
 });

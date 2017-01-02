@@ -11,6 +11,7 @@ $(document).ready(function(){
     cards.push(card);
   }
   cards.forEach(function(card) {
+
     $('.container').append("<div class='card'>" + card.front + "</div>");
   });
 });
