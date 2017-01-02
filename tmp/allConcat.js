@@ -5,13 +5,23 @@ var images = ['<img src="img/bm1.jpg">', '<img src="img/bm1.jpg">', '<img src="i
 $(document).ready(function(){
   var cards = [];
   for (i = 0; i < 12; i++) {
+    var number = i;
     var back = '<img src="img/card-back.jpg">';
-    var card = new Card(back);
+    var card = new Card(back, number);
     card.randomize(images);
     cards.push(card);
   }
-  cards.forEach(function(card) {
 
-    $('.container').append("<div class='card'>" + card.front + "</div>");
+  cards.forEach(function(card) {
+    $('.cards').append("<div class='card-back" + card.number + "'>" + card.back + "</div>");
+    $('.cards').append("<div class='card-front" + card.number + "'>" + card.front + "</div>" );
+  });
+
+  $('[class^="card-back"]').click(function(){
+    var elementClass = $(this).attr('class');
+    console.log(elementClass);
+
+    //this card front show //
+    // get element by id //
   });
 });

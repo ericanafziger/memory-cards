@@ -1,6 +1,7 @@
-function Card(back) {
+function Card(back, number) {
   this.front;
   this.back = back;
+  this.number = number;
 }
 
 Card.prototype.randomize = function(images) {
